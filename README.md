@@ -34,8 +34,9 @@ It allows users to manage a list of books and authors.
 ```bash
       Copy code
       cd virtual-library/virtual-backend
-      Install dependencies:
 ```
+3. Install dependencies:
+
 
 ```bash
       Copy code
@@ -47,46 +48,53 @@ It allows users to manage a list of books and authors.
       Copy code
       cp .env.example .env
       Configure the .env file with your database connection details.
-      
-      Generate the application key:
 ```
+      
+4. Generate the application key:
+
       
  ```bash
       Copy code
       php artisan key:generate
-      Run migrations to create the database tables:
 ```
+5. Run migrations to create the database tables:
+
       
 ```bash
       Copy code
       php artisan migrate
-      Start the Laravel development server:
 ```
+6. Start the Laravel development server:
+
       
 ```bash
       Copy code
       php artisan serve
-      Frontend (ReactJS)
-      Open a new terminal window and navigate to the frontend directory:
 ```
+7. Frontend (ReactJS):
+      Open a new terminal window and navigate to the frontend directory:
+
 
 ```bash
    Copy code
    cd virtual-library/virtual-lib_dashboard
-   Install dependencies:
 ```
+8. Install dependencies:
+
 
 ```bash
    Copy code
    npm install
-   Start the React development server:
 ```
+9. Start the React development server:
+
 
 ```bash
    Copy code
    npm start
-   Open your browser and go to http://localhost:3000 to access the React app.
 ```
+   Open your browser and go to http://localhost:3000 to access the React app.
+
 
 
 Usage
