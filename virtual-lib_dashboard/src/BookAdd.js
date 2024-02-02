@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 
 function BookAdd() {
     const [name, setName] = useState("");
@@ -17,6 +17,8 @@ function BookAdd() {
             body: formData
           });
           alert("Data has been created");
+        formData.append('name', name);
+          console.warn("Book Result", response)
 
     }
 

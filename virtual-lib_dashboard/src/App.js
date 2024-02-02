@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import AuthorList from './AuthorList';
 import BookList from './BookList';

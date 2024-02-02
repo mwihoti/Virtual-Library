@@ -22,7 +22,11 @@ function AddAuthor() {
           });
           alert("Data has been created");
 
+          console.warn("Author Response", response)
+          
+
     }
+    
 
   return (
     <div>
