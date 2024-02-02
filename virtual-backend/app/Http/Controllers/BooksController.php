@@ -1,29 +1,38 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Book;
+
 
 class BooksController extends Controller
 {
     //
-    function getIndex()
+    function books()
     {
         return Book::all();
 
     }
-    function show_id($id)
+    function books_id($id)
     {
-        return Book::with('author')->find($id);
+        $book = Book::with('author')->find($id);
+
+        if ($book) {
+            // If the book is found, return it as a JSON response
+            return response()->json($book);
+        } else {
+            // If the book is not found, return an error response
+            return response()->json(['error' => 'Book not found'], 404);
+        }
     }
-    function book_store(Request $req)
+    function book_list(Request $req)
     {
         return Book::create($req->all());
     }
-    function update_books(Request $req, $id)
+    function update_book(Request $req, $id)
     {
         $book = Book::findOrFail($id);
-        $book->update_books($req->all());
+        $book->update_book($req->all());
         return $book;
     }
 }
