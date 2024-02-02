@@ -9,10 +9,11 @@ function Header() {
      
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Nav className="me-auto navbar_wrapper">
-              <Link to="/update">Home</Link>
-              <Link to="/authors">Authors</Link>
+              <Link to="/update">update</Link>
+              <Link to="/authorlist">AuthorsList</Link>
               <Link to="/booklist">Book List</Link>
-              <Link to="/books">Book</Link>
+              <Link to="/books">Add Books</Link>
+              <Link to="/authors">Add Author</Link>
             </Nav>
           
         </Navbar>

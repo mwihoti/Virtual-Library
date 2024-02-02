@@ -7,15 +7,16 @@ function AddAuthor() {
     const [country, setCountry] = useState("");
     const [genre, setGenre] = useState("");
 
-    async function addbook ()
+    async function AddAuthors ()
     {
         console.warn(name, gender, age, country, genre);
         const formData = new FormData();
         formData.append('name', name);
         formData.append('gender', gender);
         formData.append('age', age);
-        formData.
-        let response = await fetch("http://localhost:8000/api/book",{
+        formData.append('country', country);
+        formData.append('genre', genre)
+        let response = await fetch("http://localhost:8000/api/author",{
             method: 'POST',
             body: formData
           });
@@ -26,14 +27,17 @@ function AddAuthor() {
   return (
     <div>
         <div>
-        <h1>Add Books</h1>
+        <h1>Add Authors</h1>
 
         <div>
         <input type="text" onChange={(e) => setName(e.target.value)} className='form-control' placeholder='Name'/>
-        <input type="text" onChange={(e) => setIsbn(e.target.value)} className='form-control' placeholder='isbn'/>
-        <input type="text" onChange={(e) => setAuthor(e.target.value)} className='form-control' placeholder='Author'/>
+        <input type="text" onChange={(e) => setGender(e.target.value)} className='form-control' placeholder='gender'/>
+        <input type="text" onChange={(e) => setAge(e.target.value)} className='form-control' placeholder='Age'/>
+        <input type="text" onChange={(e) => setCountry(e.target.value)} className="form-control" placeholder='country'/>
+        <input type="text" onChange={(e) => setGenre(e.target.value)} className="form-control" placeholder='genre'/>
+        
         </div>
-        <button className='btn btn-primary' onClick={addbook}>ADD BOOK</button>
+        <button className='btn btn-primary' onClick={AddAuthors}>ADD BOOK</button>
 
        
         
