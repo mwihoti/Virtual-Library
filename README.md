@@ -29,56 +29,57 @@ It allows users to manage a list of books and authors.
    ```bash
    git clone https://github.com/mwihoti/virtual-library.git
 
-Navigate to the backend directory:
+2. Navigate to the backend directory:
 
-bash
-Copy code
-cd virtual-library/virtual-backend
-Install dependencies:
+```bash
+      Copy code
+      cd virtual-library/virtual-backend
+      Install dependencies:
 
-bash
-Copy code
-composer install
-Copy the .env.example file to create a .env file:
+```bash
+      Copy code
+      composer install
+      Copy the .env.example file to create a .env file:
+      
+ ```bash
+      Copy code
+      cp .env.example .env
+      Configure the .env file with your database connection details.
+      
+      Generate the application key:
+      
+ ```bash
+      Copy code
+      php artisan key:generate
+      Run migrations to create the database tables:
+      
+```bash
+      Copy code
+      php artisan migrate
+      Start the Laravel development server:
+      
+```bash
+      Copy code
+      php artisan serve
+      Frontend (ReactJS)
+      Open a new terminal window and navigate to the frontend directory:
 
-bash
-Copy code
-cp .env.example .env
-Configure the .env file with your database connection details.
+```bash
+   Copy code
+   cd virtual-library/virtual-lib_dashboard
+   Install dependencies:
 
-Generate the application key:
+```bash
+   Copy code
+   npm install
+   Start the React development server:
 
-bash
-Copy code
-php artisan key:generate
-Run migrations to create the database tables:
+```bash
+   Copy code
+   npm start
+   Open your browser and go to http://localhost:3000 to access the React app.
 
-bash
-Copy code
-php artisan migrate
-Start the Laravel development server:
-
-bash
-Copy code
-php artisan serve
-Frontend (ReactJS)
-Open a new terminal window and navigate to the frontend directory:
-
-bash
-Copy code
-cd virtual-library/virtual-lib_dashboard
-Install dependencies:
-
-bash
-Copy code
-npm install
-Start the React development server:
-
-bash
-Copy code
-npm start
-Open your browser and go to http://localhost:3000 to access the React app.
-
+```
 Usage
 Visit http://localhost:8000 to access the Laravel backend.
 Use the React app at http://localhost:3000 to interact with the frontend.
