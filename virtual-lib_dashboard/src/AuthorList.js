@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 function AuthorList() {
  
-    const [author, setAuthhor] = useState([]);
+    const [author, setAuthor] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
           try {
             let response = await fetch("http://localhost:8000/api/authors");
             let result = await response.json();
-            setBooks(result);
+            setAuthor(result);
           } catch (error) {
             console.error("Error fetching data:", error);
           }
@@ -18,7 +18,7 @@ function AuthorList() {
     
         fetchData();
       }, []);
-      console.warn("Books", books)
+      console.warn("Books", author)
    
     
   return (
@@ -29,19 +29,22 @@ function AuthorList() {
         <Table>
             <tr>
                 <td>Id</td>
-                <td>name</td>
-                <td>Isbn</td>
-                <td>Author</td>
-                <td>Operations</td>
+                <td>Name</td>
+                <td>Gender</td>
+                <td>Age</td>
+                <td>Country</td>
+                <td>Genre</td>
                 
             </tr>
             {
-                books.map((item)=>
+                author.map((item)=>
                     <tr>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td>{item.isbn}</td>
-                <td>{item.author}</td>
+                <td>{item.gender}</td>
+                <td>{item.age}</td>
+                <td>{item.country}</td>
+                <td>{item.genre}</td>
         
                 <td>
                     <Link to ={"update/"+item.id}>
