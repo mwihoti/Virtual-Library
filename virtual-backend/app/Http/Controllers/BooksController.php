@@ -35,4 +35,15 @@ class BooksController extends Controller
         $book->update_book($req->all());
         return $book;
     }
+    function delete ($id)
+    {
+        $response = Book::where('id', $id)->delete();
+        if($response)
+        {
+            return ["response"=> "Product has been delete"];
+        }
+        else {
+            return ["response" => "Operation failed"];
+        }
+    }
 }

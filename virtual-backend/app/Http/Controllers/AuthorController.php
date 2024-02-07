@@ -51,4 +51,8 @@ class AuthorController extends Controller
         return response()->json(['error' => 'Author not found'], 404);
     }
     }
+    function delete($id)
+    {
+        return $id;
+    }
 }

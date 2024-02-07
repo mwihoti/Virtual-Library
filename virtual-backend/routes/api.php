@@ -25,8 +25,9 @@ Route::get('/books', [BooksController::class, 'books']);
 Route::get('/book/{id}', [BooksController::class, 'books_id']);
 Route::post('/book', [BooksController::class, 'book_list']);
 Route::put('/book/{id}', [BooksController::class, 'update_book']);
+Route::delete('book/delete/{id}', [BooksController::class, 'delete']);
 Route::get('/authors', [AuthorController::class, 'authors']);
 Route::get('/author/{id}', [AuthorController::class, 'authors_id']);
 Route::post('/author', [AuthorController::class, 'author_c']);
 Route::put('/author/{id}', [AuthorController::class, 'update_authors']);
-
+Route::delete('author/delete/{id}', [AuthorController::class, 'delete']);
