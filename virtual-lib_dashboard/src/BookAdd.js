@@ -16,7 +16,7 @@ function BookAdd() {
             method: 'POST',
             body: formData
           });
-          alert("Data has been created");
+          alert("Book Data has been created");
         formData.append('name', name);
           console.warn("Book Result", response)
 

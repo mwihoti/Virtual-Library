@@ -41,7 +41,7 @@ function AddAuthor() {
         <input type="text" onChange={(e) => setGenre(e.target.value)} className="form-control" placeholder='genre'/>
         
         </div>
-        <button className='btn btn-primary' onClick={AddAuthors}>ADD BOOK</button>
+        <button className='btn btn-primary' onClick={AddAuthors}>ADD AUTHOR</button>
 
        
         

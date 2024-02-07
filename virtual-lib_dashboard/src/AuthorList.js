@@ -23,7 +23,7 @@ function AuthorList() {
     
   return (
     <div>
-        <h1>BookList</h1>
+        <h1>Author List</h1>
 
         <div>
         <Table>
