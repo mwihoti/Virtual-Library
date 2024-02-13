@@ -31,8 +31,11 @@ class BooksController extends Controller
     }
     function update_book(Request $req, $id)
     {
-        $book = Book::findOrFail($id);
-        $book->update_book($req->all());
+        $book = Book::find($id);
+        $book->name= $req->input('name');
+        $book->isbn = $req->input('isbn');
+        $book->author = $req->input('author');
+        $book->save();
         return $book;
     }
     function delete ($id)
@@ -45,5 +48,13 @@ class BooksController extends Controller
         else {
             return ["response" => "Operation failed"];
         }
+    }
+    function getBook($id)
+    {
+        return $id;
+    }
+    function search($key)
+    {
+        return Book::where('name' ,'Like', "%$key%")->get();
     }
 }

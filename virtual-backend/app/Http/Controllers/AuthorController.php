@@ -53,6 +53,15 @@ class AuthorController extends Controller
     }
     function delete($id)
     {
-        return $id;
+        $response = Author::where('id', $id)->delete();
+        if ($response)
+        {
+            return ["response" => "product has been deleted"];
+
+        }
+        else
+        {
+            return ["response" => "Operation failed"];
+        }
     }
 }
