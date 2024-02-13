@@ -20,9 +20,16 @@ function AddAuthor() {
             method: 'POST',
             body: formData
           });
-          alert("Data has been created");
 
+          alert("Data has been created");
           console.warn("Author Response", response)
+          setName("");
+          setAge("");
+          setGender("");
+          setGenre("");
+          setCountry("");
+
+          
           
 
     }
@@ -34,11 +41,11 @@ function AddAuthor() {
         <h1>Add Authors</h1>
 
         <div>
-        <input type="text" onChange={(e) => setName(e.target.value)} className='form-control' placeholder='Name'/>
-        <input type="text" onChange={(e) => setGender(e.target.value)} className='form-control' placeholder='gender'/>
-        <input type="text" onChange={(e) => setAge(e.target.value)} className='form-control' placeholder='Age'/>
-        <input type="text" onChange={(e) => setCountry(e.target.value)} className="form-control" placeholder='country'/>
-        <input type="text" onChange={(e) => setGenre(e.target.value)} className="form-control" placeholder='genre'/>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className='form-control' placeholder='Name'/>
+        <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} className='form-control' placeholder='gender'/>
+        <input type="text" value={age} onChange={(e) => setAge(e.target.value)} className='form-control' placeholder='Age'/>
+        <input type="text" value={country} onChange={(e) => setCountry(e.target.value)} className="form-control" placeholder='country'/>
+        <input type="text" value={genre} onChange={(e) => setGenre(e.target.value)} className="form-control" placeholder='genre'/>
         
         </div>
         <button className='btn btn-primary' onClick={AddAuthors}>ADD AUTHOR</button>

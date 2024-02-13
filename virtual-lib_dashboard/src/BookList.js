@@ -19,6 +19,17 @@ function BookList() {
         fetchData();
       }, []);
       console.warn("Books", books)
+
+      async function deleteOp(id)
+      {
+        let result = await fetch("http://localhost:8000/api/book/delete/"+id, {
+          method: 'DELETE'
+        });
+        result = await result.json();
+        
+        console.warn(result);
+        setBooks (prevBooks => prevBooks.filter(book => book.id !== id))
+      }
    
     
   return (
@@ -35,9 +46,9 @@ function BookList() {
                 <td>Operations</td>
                 
             </tr>
-            {
+            { 
                 books.map((item)=>
-                    <tr>
+              <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.isbn}</td>
@@ -47,6 +58,7 @@ function BookList() {
                     <Link to ={"update/"+item.id}>
                     <span  className="update">Update</span>
                     </Link>
+                    <span className="delete" value={books} onClick={()=>deleteOp(item.id)}>Delete</span>
                     
                     </td>
             </tr>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function AuthorList() {
  
     const [author, setAuthor] = useState([]);
+    
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -19,6 +20,20 @@ function AuthorList() {
         fetchData();
       }, []);
       console.warn("Books", author)
+
+    async  function deleteOp(id)
+      {
+        let response = await fetch(`http://localhost:8000/api/author/delete/${id}`, {
+  method: "DELETE"
+});
+
+        response = await response.json();
+        
+        console.warn(response)
+        setAuthor(prevAuth => prevAuth.filter(author => author.id !== id))
+      
+      }
+      
    
     
   return (
@@ -38,7 +53,7 @@ function AuthorList() {
             </tr>
             {
                 author.map((item)=>
-                    <tr>
+              <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.gender}</td>
@@ -50,6 +65,7 @@ function AuthorList() {
                     <Link to ={"update/"+item.id}>
                     <span  className="update">Update</span>
                     </Link>
+                    <span className='delete' onClick={()=> deleteOp(item.id)}>Delete </span>
                     
                     </td>
             </tr>

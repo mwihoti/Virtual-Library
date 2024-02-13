@@ -5,6 +5,7 @@ import BookList from './BookList';
 import Header from './header';
 import BookAdd from './BookAdd';
 import AddAuthor from './AddAuthor';
+import Updates from './UpdateBook';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
             
      
      <Route path="authorlist" element={<AuthorList/>}/>
+     <Route path="/authorlist/update/:id" element={<Updates />} />
      <Route path="books" element={<BookAdd />}/>
+     <Route path="/booklist/update/:id" element={<Updates />} />
      <Route path="booklist" element={<BookList />}/>
      <Route path="authors" element={< AddAuthor/>}/>
      

@@ -22,6 +22,12 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.delete {
+  background-color: #a90b0b;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 .App-header {
   background-color: #282c34;
