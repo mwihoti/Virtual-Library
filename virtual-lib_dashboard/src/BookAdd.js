@@ -32,10 +32,10 @@ function BookAdd() {
   return (
     <div>
         <div>
-        <h1>Add Books</h1>
+        <h1 className='text-uppercase text-decoration-underline'>Add Books</h1>
 
         <div>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className='form-control' placeholder='Name'/>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} className='form-control mb-3' placeholder='Name'/>
         <input type="text" value={isbn} onChange={(e) => setIsbn(e.target.value)} className='form-control' placeholder='isbn'/>
         <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} className='form-control' placeholder='Author'/>
         <input type="text" value={author_id} onChange={(e) => setAuthor_id(e.target.value)} className='form-control' placeholder='Author_id'/>

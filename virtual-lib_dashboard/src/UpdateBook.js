@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 
 function Updates() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({name: '', isbn: '', author: ''});
     const navigate = useNavigate();
     const {id} = useParams();
 
@@ -18,17 +18,38 @@ function Updates() {
         } catch(error){
             console.log("Missing data", error)
         }
-    }; fetchData();}, [id])
+    }; fetchData();}, [id]);
+
+    const handleInputChange = (e) => {
+      const {name, value} = e.target;
+      setData({ ...data, [name]: value })
+
+    };
+    const handleUpdate = async () => {
+      try {
+        await fetch(`http://localhost:8000/api/book/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type' : 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+      }
+      catch (error)
+      {
+        console.error("Error updating", error)
+      }
+    }
     
   return (
     <div>
-        <h1>Update Books</h1>
-        <input type='text' value={data.name} /> <br /> <br />
-        <input type='text' value={data.isbn} /> <br /> <br />
-        <input type='text' value={data.author} /> <br/><br/>
+        <h1 className='text-uppercase text-decoration-underline'>Update Books</h1>
+        <input type='text' name='name' value={data.name || '' } onChange={handleInputChange} /> <br /> <br />
+        <input type='text' name= 'isbn' value={data.isbn || ''} onChange={handleInputChange} /> <br /> <br />
+        <input type='text' name= 'author' value={data.author|| ''} onChange={handleInputChange}/> <br/><br/>
        
 
-        <button>Update Button</button>
+        <button onClick={handleUpdate}>Update Button</button>
         
     </div>
 

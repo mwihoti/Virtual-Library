@@ -7,7 +7,7 @@ function Header() {
       <>
         <Navbar bg="dark" data-bs-theme="dark">
      
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="#home" className=' font-italic'>Virtual Library</Navbar.Brand>
             <Nav className="me-auto navbar_wrapper">
               <Link to="/update/:id">update</Link>
               <Link to="/authorlist">AuthorsList</Link>

@@ -38,7 +38,7 @@ function AuthorList() {
     
   return (
     <div>
-        <h1>Author List</h1>
+        <h1 className='text-uppercase text-decoration-underline'>Author List</h1>
 
         <div>
         <Table>
@@ -73,6 +73,7 @@ function AuthorList() {
                 )
             }
         </Table>
+        
         
         </div>
 
