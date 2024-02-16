@@ -6,6 +6,8 @@ import Header from './header';
 import BookAdd from './BookAdd';
 import AddAuthor from './AddAuthor';
 import Updates from './UpdateBook';
+import UpdateAuthor from './UpdateAuthor';
+import SearchItems from './searchitems';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -13,13 +15,14 @@ function App() {
     <div className='App' >
       <BrowserRouter>
       <Header />
-      <h1>virtual Library</h1>
+      
       <Routes>
             
      
      <Route path="authorlist" element={<AuthorList/>}/>
-     <Route path="/authorlist/update/:id" element={<Updates />} />
+     <Route path="/authorlist/update/:id" element={<UpdateAuthor />} />
      <Route path="books" element={<BookAdd />}/>
+     <Route path="search" element={<SearchItems />}/>
      <Route path="/booklist/update/:id" element={<Updates />} />
      <Route path="booklist" element={<BookList />}/>
      <Route path="authors" element={< AddAuthor/>}/>

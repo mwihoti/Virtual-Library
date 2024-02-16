@@ -14,6 +14,7 @@ function Header() {
               <Link to="/booklist">Book List</Link>
               <Link to="/books">Add Books</Link>
               <Link to="/authors">Add Author</Link>
+              <Link to="/search">Search Items</Link> 
             </Nav>
           
         </Navbar>

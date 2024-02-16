@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 
-function Updates(props) {
+function Updates() {
     const [data, setData] = useState([]);
     const navigate = useNavigate();
     const {id} = useParams();
@@ -22,10 +22,13 @@ function Updates(props) {
     
   return (
     <div>
-        <h1>Update Product</h1>
-        <input type='text' defaultValue={data.name} /> <br /> <br />
-        <input type='text' defaultValue={data.isbn} /> <br /> <br />
-        <input type="text" defaultValue={data.author} /> <br/><br/>
+        <h1>Update Books</h1>
+        <input type='text' value={data.name} /> <br /> <br />
+        <input type='text' value={data.isbn} /> <br /> <br />
+        <input type='text' value={data.author} /> <br/><br/>
+       
+
+        <button>Update Button</button>
         
     </div>
 
