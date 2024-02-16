@@ -21,7 +21,7 @@ class AuthorController extends Controller
             return response()->json($author);
         } else {
             // If the book is not found, return an error response
-            return response()->json(['error' => 'Book not found'], 404);
+            return response()->json(['error' => 'Author not found'], 404);
         }
     }
     function author_c(Request $req)

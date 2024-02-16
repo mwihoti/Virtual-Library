@@ -15,7 +15,7 @@ class BooksController extends Controller
     }
     function books_id($id)
     {
-        $book = Book::with('author')->find($id);
+        $book = Book::find($id);
 
         if ($book) {
             // If the book is found, return it as a JSON response
@@ -31,12 +31,20 @@ class BooksController extends Controller
     }
     function update_book(Request $req, $id)
     {
-        $book = Book::find($id);
-        $book->name= $req->input('name');
-        $book->isbn = $req->input('isbn');
-        $book->author = $req->input('author');
-        $book->save();
-        return $book;
+      $book = Book:: find($id);
+
+      if ($book)
+      {
+        $req-> validate([
+            'name' => 'required|string',
+            'isbn' => 'required|string',
+            'author' => 'required|string',
+        ]);
+        $book->update($req->all());
+
+        return response()->json($books);
+
+      }
     }
     function delete ($id)
     {
